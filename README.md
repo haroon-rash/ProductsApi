@@ -1,6 +1,6 @@
 # 🛒 Reactive Products API
 
-A high-performance, non-blocking **RESTful Product Management API** built with **Spring WebFlux**, **R2DBC**, and **PostgresSQL**. Fully reactive using Project Reactor to deliver scalable and responsive backend services.
+A high-performance, non-blocking **RESTful Product Management API** built with **Spring WebFlux**, **R2DBC**, and **Postgres**. Fully reactive using Project Reactor to deliver scalable and responsive backend services.
 
 ---
 
