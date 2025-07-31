@@ -1,6 +1,6 @@
 # 🛒 Reactive Products API
 
-A high-performance, non-blocking **RESTful Product Management API** built with **Spring WebFlux**, **R2DBC**, and **MySQL**. Fully reactive using Project Reactor to deliver scalable and responsive backend services.
+A high-performance, non-blocking **RESTful Product Management API** built with **Spring WebFlux**, **R2DBC**, and **PostgresSQL**. Fully reactive using Project Reactor to deliver scalable and responsive backend services.
 
 ---
 
@@ -37,7 +37,7 @@ private UUID id;
 @NonNull private String description;
 @NonNull private int quantity;
 @NonNull private double price;
-@NonNull private String categories;
+
 ```
 
 ---
@@ -50,7 +50,7 @@ private UUID id;
 │   ├── service
 │   ├── repository
 │   ├── entities
-│   └── config
+│  
 ```
 
 ---
@@ -58,20 +58,27 @@ private UUID id;
 ## ⚙️ application.properties
 
 ```properties
-# Server Port
-server.port=8080
+# App Name and Port
+spring.application.name=ProductsApi
+server.port=8081
 
-# R2DBC Configuration
-spring.r2dbc.url=r2dbc:mysql://localhost:3306/productsdb
+# R2DBC PostgreSQL connection
+spring.r2dbc.url=r2dbc:postgresql://localhost:5432/products
 spring.r2dbc.username=root
-spring.r2dbc.password=your_password
+spring.r2dbc.password=root@1234
 
-# Disable Spring SQL Init since we’re not using schema.sql
+# JDBC URL for schema initialization (if needed)
+spring.datasource.url=jdbc:postgresql://localhost:5432/products
+spring.datasource.username=root
+spring.datasource.password=root@1234
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# Optional: Disable automatic SQL init if you create tables manually
 spring.sql.init.mode=never
 
-# Optional: Show SQL queries in logs
-spring.r2dbc.properties.logging=true
-```
+# Logging for debugging
+logging.level.org.springframework.r2dbc=DEBUG
+
 
 ---
 
