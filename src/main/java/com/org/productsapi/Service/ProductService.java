@@ -10,8 +10,7 @@ public interface ProductService {
 
     public Mono<Product> create(Product product);
     public Mono<Product> update (Product product ,UUID id);
-public Mono<Void> delete (UUID id);
+public Mono<String> delete (UUID id);
 public Flux<Product> getAll();
-public Flux<Product> search(String query);
 
 }
