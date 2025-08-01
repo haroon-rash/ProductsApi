@@ -99,21 +99,12 @@ CREATE TABLE products (
 
 ---
 
-## 📬 API Endpoints
-
-| Method | Endpoint           | Description        |
-|--------|--------------------|--------------------|
-| GET    | `/products`        | List all products  |
-| GET    | `/products/{id}`   | Get a product      |
-| POST   | `/products`        | Create new product |
-| PUT    | `/products/{id}`   | Update product     |
-| DELETE | `/products/{id}`   | Delete product     |
 
 ---
 
 ## ▶️ How to Run
 
-1. ✅ Ensure MySQL is running and create the `productsdb` database
+1. ✅ Ensure Postgress is running and create the `productsdb` database
 2. ✅ Run the SQL table creation script
 3. ✅ Update `application.properties` with correct DB credentials
 4. ✅ Run the Spring Boot app:
