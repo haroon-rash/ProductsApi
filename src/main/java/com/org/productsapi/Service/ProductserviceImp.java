@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
 import java.util.UUID;
 @Service
 public class ProductserviceImp implements ProductService {
@@ -46,6 +47,7 @@ public class ProductserviceImp implements ProductService {
     @Override
     public Flux<Product> getAll() {
       return productRepository.findAll();
+             // .delayElements(Duration.ofSeconds(1)); //delay of each book by 2 seconds
     }
 
 
